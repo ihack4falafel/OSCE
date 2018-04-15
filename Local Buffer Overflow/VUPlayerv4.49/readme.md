@@ -1,4 +1,4 @@
-# VUPlayer v4.49
+# VUPlayer v2.49
 ROP chain exploit to bypass DEP protection on Windows XP SP3 using Windows VirtualProtect() API. I made two techniques to achieve the same outcome that is popping calc.exe.  
 
 
