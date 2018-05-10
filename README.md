@@ -1,4 +1,5 @@
-Some of the sploits and tools made during my joruney to take on OSCE  
+# OSCE
+Some of the sploits and tools (mostly useless) made during my joruney to take on OSCE.  
 
 
 <p align="center">
