@@ -1,3 +1,6 @@
-Some of the exploits made during my pepperation to take on OSCE  
+Some of the sploits and tools made during my joruney to take on OSCE  
 
-![alt text](https://media.giphy.com/media/5mgEKepyqjpU4/giphy.gif)
+
+<p align="center">
+  <img  src="https://media.giphy.com/media/Uno27COfoYlH2/giphy.gif">
+</p>
