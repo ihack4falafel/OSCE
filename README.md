@@ -1,7 +1,7 @@
 # OSCE
-Some of the sploits and tools (mostly useless) made during my joruney to take on OSCE.  
+Some of the sploits and tools made during my joruney to take on OSCE. Mostly useless.. 
 
 
 <p align="center">
-  <img  src="https://media.giphy.com/media/Uno27COfoYlH2/giphy.gif">
+  <img  height=500 width=900 src="https://media.giphy.com/media/Uno27COfoYlH2/giphy.gif">
 </p>
