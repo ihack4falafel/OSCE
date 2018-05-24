@@ -5,3 +5,7 @@ Some of the sploits and tools made during my joruney to take on OSCE. Mostly use
 <p align="center">
   <img  height=500 width=900 src="https://media.giphy.com/media/Uno27COfoYlH2/giphy.gif">
 </p>
+
+<p align="center">
+With persistence and patience comes success
+</p>
